@@ -1,0 +1,20 @@
+syntax="proto3";
+
+option go_package = "./todo";
+
+message TodoInputData {
+    string name = 1;
+    string description = 2;
+    bool done = 3;
+}
+
+message TodoResponseData {
+    string name = 1;
+    string description = 2;
+    bool done = 3;
+    string id = 4;
+}
+
+service TodoService {
+    rpc CreateTodo(TodoInputData) returns (TodoResponseData) {}
+}
